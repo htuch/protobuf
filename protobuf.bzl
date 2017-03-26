@@ -107,6 +107,7 @@ def _proto_gen_impl(ctx):
         outputs=ctx.outputs.outs,
         arguments=args + import_flags + [s.path for s in srcs],
         executable=ctx.executable.protoc,
+        use_default_shell_env=True,
         mnemonic="ProtoCompile",
     )
 
